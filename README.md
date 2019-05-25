@@ -48,7 +48,23 @@ $ python main.py
 
 这里并没有对文本进行过多的预处理，比如去除特殊符号，停用词等。另外直接采用了字作为特征，对于中文文本分类，感觉分词已经没有必要了。
 
-另外我还使用了 LogisticRegression 作为 baseline 对此数据集进行了分类。实验表明在验证集上得到了 90.8% 的准确度，在训练集上准确率达到 96.2%。尽管已经使用了较大的正则化系数，默认依然存在过拟合。这也表明，对于长文本分类问题，Bow + 简单线性模型，就能够得到较好的效果了。
+我使用 [FastText](https://fasttext.cc/) 对该数据集进行了分类，发现分类准确度能轻松达到 99% 以上。这也表明，对于长文本分类问题，词袋模型就足够了。深度模型，可能更适合于一些复杂的场景，比如词与词之间关系较大时。
+
+```
+F1-Score : 0.999400  Precision : 0.999800  Recall : 0.999000   __label__0
+F1-Score : 0.995690  Precision : 0.997991  Recall : 0.993400   __label__5
+F1-Score : 0.996396  Precision : 0.997395  Recall : 0.995400   __label__1
+F1-Score : 0.998701  Precision : 0.998003  Recall : 0.999400   __label__2
+F1-Score : 0.999000  Precision : 0.999400  Recall : 0.998600   __label__3
+F1-Score : 0.983119  Precision : 0.987884  Recall : 0.978400   __label__8
+F1-Score : 0.997598  Precision : 0.998397  Recall : 0.996800   __label__9
+F1-Score : 0.985344  Precision : 0.975873  Recall : 0.995000   __label__4
+F1-Score : 0.996898  Precision : 0.997597  Recall : 0.996200   __label__6
+F1-Score : 0.998700  Precision : 0.998800  Recall : 0.998600   __label__7
+N       50000
+P@1     0.995
+R@1     0.995
+```
 
 ## 配置
 
