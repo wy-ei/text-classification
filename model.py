@@ -9,8 +9,8 @@ class TextCNN(nn.Module):
                  class_num=None,
                  embed_num=None,
                  embed_dim=100,
-                 kernel_num=32,
-                 kernel_size_list=None,
+                 kernel_num=128,
+                 kernel_size_list=(3,4,5),
                  dropout=0.5):
         
         super(TextCNN, self).__init__()
