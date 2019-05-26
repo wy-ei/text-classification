@@ -7,15 +7,15 @@ import torch.nn.functional as F
 class TextCNN(nn.Module):
     def __init__(self,
                  class_num=None,
-                 embed_num=None,
-                 embed_dim=100,
+                 embed_size=None,
+                 embed_dim=64,
                  kernel_num=128,
                  kernel_size_list=(3,4,5),
                  dropout=0.5):
         
         super(TextCNN, self).__init__()
                 
-        self.embedding = nn.Embedding(embed_num, embed_dim)
+        self.embedding = nn.Embedding(embed_size, embed_dim)
         
         self.conv1d_list = nn.ModuleList([
             nn.Conv1d(embed_dim, kernel_num, kernel_size)

@@ -8,6 +8,7 @@ from torch.utils.data import Dataset, DataLoader
 PAD_WORD = '<PAD>'
 UNK_WORD = '<UNK>'
 
+# 文档最大长度限制
 DOCUMENT_MAX_LENGTH = 500
 
 CATEGIRY_LIST = ['体育', '财经', '房产', '家居', '教育', '科技', '时尚', '时政', '游戏', '娱乐']
