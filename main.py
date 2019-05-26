@@ -22,9 +22,9 @@ if __name__ == "__main__":
     logger.info('using device: {}'.format(device))
 
     
-    train_file = os.path.abspath('../../datasets/cnews/cnews.train.txt')
-    valid_file = os.path.abspath('../../datasets/cnews/cnews.val.txt')
-    test_file = os.path.abspath('../../datasets/cnews/cnews.test.txt')
+    train_file = os.path.abspath('./datasets/cnews/cnews.train.txt')
+    valid_file = os.path.abspath('./datasets/cnews/cnews.val.txt')
+    test_file = os.path.abspath('./datasets/cnews/cnews.test.txt')
 
     logger.info('load and preprocess data...')
     
